@@ -17,13 +17,12 @@ public class IndexModel : RedisPageModel
 
     }
 
-    public IActionResult OnPost(string text)
+    public IActionResult? OnPost(string text)
     {
         if (String.IsNullOrEmpty(text))
         {
-            return Redirect("about");
+            return null;
         }
-
         
         _logger.LogDebug(text);
 
